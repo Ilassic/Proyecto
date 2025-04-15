@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="EstiloProyec.css">
+    <link rel="stylesheet" href="EstiloHistorial.css">
+    <title>Historial de Alquileres ERXIDI</title>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="LogoProyecto.jpg" alt="Logo ERXIDI" class="logo">
+        </div>
+        <h1> ERXIDI - ALQUILER DE BICICLETAS</h1>
+        <nav>
+            <ul>
+                <li><a href="Principal.html">Inicio</a></li>
+                <li><a href="ModeBici.html">Modelos de Bicicletas</a></li>
+                <li><a href="Reser-Alqui.html">Reservas o Alquilar</a></li>
+                <li><a href="Historial-Alq.html">Historial de alquileres</a></li>
+                <li><a href="#" id="logout-link">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="historial-container" class="historial-section">
+            <h2>Mi Historial de Alquileres</h2>
+
+            <div class="filtros-historial">
+                <h3>Buscar Alquileres</h3>
+                <div class="filtro-grupo">
+                    <label for="filtro-dni">Buscar por DNI:</label>
+                    <input type="text" id="filtro-dni" placeholder="Ingrese DNI del usuario">
+                </div>
+                <div class="filtro-grupo">
+                    <label for="filtro-nombre">Buscar por Nombre/Apellidos:</label>
+                    <input type="text" id="filtro-nombre" placeholder="Ingrese Nombre o Apellidos">
+                </div>
+                <button id="btn-buscar-historial" class="boton-buscar">Buscar</button>
+                <button id="btn-mostrar-todo" class="boton-secundario">Mostrar Todo</button>
+            </div>
+
+            <div id="info-usuario" class="info-usuario-container">
+                <h3>Información del Usuario</h3>
+                <p><strong>Usuario:</strong> <span id="usuario-nombre">Cargando...</span></p>
+                <p><strong>DNI:</strong> <span id="usuario-dni">Cargando...</span></p>
+                <p><strong>Miembro desde:</strong> <span id="usuario-fecha-registro">Cargando...</span></p>
+                <div id="mensaje-descuento" class="mensaje-info" style="display: none;">
+                    </div>
+            </div>
+
+            <div id="tabla-container" class="tabla-historial-container">
+                <h3>Detalle de Alquileres</h3>
+                <div id="mensaje-no-historial" class="mensaje-info" style="display: none;">
+                    <p>Aún no tienes alquileres registrados. ¡Anímate a <a href="Reser-Alqui.html">reservar tu primera bicicleta</a>!</p>
+                </div>
+                <table id="tabla-historial">
+                    <thead>
+                        <tr>
+                            <th>Fecha Alquiler</th>
+                            <th>Hora Alquiler</th>
+                            <th>Modelo Bicicleta</th>
+                            <th>Duración (Horas)</th>
+                            <th>Costo Total</th>
+                            <th>Estado</th> </tr>
+                    </thead>
+                    <tbody id="historial-tbody">
+                        </tbody>
+                </table>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 ERXIDI E.I.R.L - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="Historial-Alq.html"></script> <script src="SesionActiva.js"></script> 
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="EstiloProyec.css">
+    <title>Principal</title>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="LogoProyecto.jpg" alt="Logo ERXIDI" class="logo">
+        </div>
+        <h1> ERXIDI - ALQUILER DE BICICLETAS</h1>
+        <nav>
+            <ul>
+                <li><a href="Principal.html">Inicio</a></li>
+                <li><a href="ModeBici.html">Modelos de Bicicletas</a></li>
+                <li><a href="Reser-Alqui.html">Reservas o Alquilar</a></li>
+                <li><a href="#Historial">Historial de alquileres</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <!-- Carrusel de Imágenes -->
+        <section id="carrusel" class="carrusel-container">
+            <div class="carrusel">
+                <div class="carrusel-slides">
+                    <div class="slide active">
+                        <img src="BiciMont.jpg" alt="Bicicleta de montaña">
+                        <div class="slide-caption">Bicicletas de Montaña</div>
+                    </div>
+                    <div class="slide">
+                        <img src="BiciMara.jpg" alt="Bicicleta de competir">
+                        <div class="slide-caption">Bicicletas para Competir</div>
+                    </div>
+                    <div class="slide">
+                        <img src="BiciEnseñando.jpg" alt="Bicicleta para niños">
+                        <div class="slide-caption">Bicicletas para Niños</div>
+                    </div>
+                    <div class="slide">
+                        <img src="BiciPlaya.jpg" alt="Bicicleta de paseo">
+                        <div class="slide-caption">Bicicletas de Paseo </div>
+                    </div>
+                </div>
+                <button class="carrusel-prev">&#10094;</button>
+                <button class="carrusel-next">&#10095;</button>
+                <div class="carrusel-dots">
+                    <span class="dot active" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                </div>
+            </div>
+        </section>
+        <section id="inicio" class="descripcion">
+            <p>Bienvenido a ERXIDI, tu mejor opción para alquilar bicicletas. Disfruta de la ciudad de forma ecológica, saludable y divertida. Tenemos bicicletas para todas las edades y gustos, ¡anímate a pedalear!</p>
+        </section>
+
+        <section id="sobre-nosotros" class="sobre-nosotros">
+            <h2>Sobre Nosotros</h2>
+            <p>En ERXIDI nos apasiona el ciclismo y el cuidado del medio ambiente. Desde nuestra fundación en 2020, ofrecemos alquiler de bicicletas de calidad, con una flota variada que se adapta a las necesidades de todos. Nuestro objetivo es fomentar el uso de la bicicleta como medio de transporte ecológico y saludable, brindando una experiencia única a nuestros clientes.</p>
+            <p>Además, contamos con un equipo de profesionales que cuidan cada detalle de las bicicletas para asegurar que nuestros clientes disfruten de cada recorrido sin preocupaciones. Ofrecemos bicicletas de paseo, deportivas y para niños, todas con un mantenimiento de alta calidad.</p>
+        </section>
+
+        <section id="contacto" class="contacto">
+            <h2>Contáctanos</h2>
+            <p>📞 Teléfono: <a href="tel:951901593">951-901-593</a></p>
+            <p>📧 Correo: <a href="mailto:bicierxidi2@gmail.com">Bicierxidi2@gmail.com</a></p>
+        </section>
+
+        <section id="reseñas" class="reseñas">
+            <h2>Reseñas de Clientes</h2>
+            <blockquote>"Excelente servicio, las bicicletas estaban en muy buen estado y el trato fue muy amable." - Laura G.</blockquote>
+            <blockquote>"Alquilamos para toda la familia y recorrimos el malecón. ¡Una experiencia inolvidable!" - Marco S. </blockquote>
+            <blockquote>"Tienen buenos precios y tiene una variedad de modelos para escoger a tu gusto sus bicicletas" - Juan C.</blockquote>
+        </section>
+
+        <section id="recomendacion" class="recomendacion">
+            <h2>¿Por qué recomendamos nuestras bicicletas?</h2>
+            <ul>
+                <li>🚲 Modelos cómodos y bien mantenidos</li>
+                <li>📍 Ubicación accesible</li>
+                <li>💵 Precios económicos por hora o día</li>
+                <li>👨‍👩‍👧‍👦 Apto para niños, jóvenes y adultos mayores</li>
+                <li>🛠 Atención personalizada y soporte rápido</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 ERXIDI E.I.R.L - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="Principal.js"></script>
+    <script src="SesionActiva.js"></script>
+</body>
+</html>

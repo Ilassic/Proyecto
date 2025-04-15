@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="EstiloProyec.css">
+    <link rel="stylesheet" href="EstiloAlquiler.css">
+    <title>Pantalla de Alquiler</title>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="LogoProyecto.jpg" alt="Logo ERXIDI" class="logo">
+        </div>
+        <h1>ERXIDI - ALQUILER DE BICICLETAS</h1>
+        <nav>
+            <ul>
+                <li><a href="Principal.html">Inicio</a></li>
+                <li><a href="ModeBici.html">Modelos de Bicicletas</a></li>
+                <li><a href="Reser-Alqui.html">Reservas o Alquilar</a></li>
+                <li><a href="#Historial">Historial de alquileres</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="formulario-reserva" class="formulario-container">
+            <h2>¡Reserva tu bicicleta ahora!</h2>
+            <p class="descripcion">Rellena el siguiente formulario para alquilar o reservar tu bicicleta. Es sencillo y todos los campos son requeridos.</p>   
+            <form id="reservaForm" class="formulario-reserva">
+                <div class="form-group">
+                    <div class="form-column">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                        <small>Solo letras, máximo 10 (sin contar espacios).</small>
+                    </div>
+                    <div class="form-column">
+                        <label for="apellidos">Apellidos:</label>
+                        <input type="text" id="apellidos" name="apellidos" required>
+                        <small>Solo letras, máximo 10 (sin contar espacios).</small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="form-column">
+                        <label for="dni">DNI:</label>
+                        <input type="tel" id="dni" name="dni" required maxlength="8">
+                        <small>Solo 8 números. Debe empezar con 0, 1, 4, 6 o 7.</small>
+                    </div>
+                    <div class="form-column">
+                        <label for="telefono">Teléfono:</label>
+                        <input type="tel" id="telefono" name="telefono" required maxlength="11">
+                        <small>Celular de 9 dígitos, empieza con 9 (ej: 987 654 321).</small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="form-column full-width">
+                        <label for="email">Correo Electrónico:</label>
+                        <input type="email" id="email" name="email" required>
+                        <small>Debe ser un correo válido.</small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="form-column">
+                        <label for="fecha">Fecha de Reserva:</label>
+                        <input type="date" id="fecha" name="fecha" required>
+                    </div>
+                    <div class="form-column">
+                        <label for="hora">Hora de Reserva:</label>
+                        <input type="time" id="hora" name="hora" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="form-column full-width">
+                        <label for="modelo">Modelo de Bicicleta:</label>
+                        <select id="modelo" name="modelo" required>
+                            <option value="">Seleccione un modelo</option>
+                            <optgroup label="Bicicletas de Montaña">
+                                <option value="Trek-Marlin-5" data-precio="18" data-imagen="BiciTREK.jpg">Trek Marlin 5</option>
+                                <option value="Giant-Talon-3" data-precio="20" data-imagen="BiciGiant.jpg">Giant XTC SLR 2</option>
+                            </optgroup>
+                            <optgroup label="Bicicletas de Ruta">
+                                <option value="Specialized-Allez" data-precio="14" data-imagen="BiciAllez.jpg">Specialized Allez Sport</option>
+                                <option value="Cannondale-CAAD13" data-precio="16" data-imagen="BiciCannondale.jpeg">Cannondale CAAD13</option>
+                            </optgroup>
+                            <optgroup label="Bicicletas Urbanas">
+                                <option value="Electra-Townie" data-precio="10" data-imagen="BiciTownie.jpg">Electra Townie Path Go! 10D</option>
+                                <option value="Schwinn-Discover" data-precio="8.50" data-imagen="BiciSchwinn.jpg">Schwinn Surbuban Deluxe</option>
+                            </optgroup>
+                            <optgroup label="Bicicletas Infantiles">
+                                <option value="Woom-3" data-precio="13" data-imagen="BiciWoom.jpg">Woom 3</option>
+                                <option value="Orbea-MX-20" data-precio="7.50" data-imagen="BiciOrbea.jpg">Orbea MX 20 XC</option>
+                            </optgroup>
+                            <optgroup label="Bicicletas BMX">
+                                <option value="WTP-Crysis" data-precio="22" data-imagen="BiciBMX.jpg">We The People Crysis</option>
+                                <option value="Kink-Gap-FC" data-precio="24" data-imagen="BiciBmx.webp">Kink Gap</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group" id="biciPreviewContainer" style="display: none;">
+                    <div class="bici-preview">
+                        <img id="biciPreview" src="" alt="Imagen de la bicicleta seleccionada">
+                        <p id="modeloSeleccionado" class="modelo-seleccionado"></p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="form-column">
+                        <label for="duracion">Duración del Alquiler (horas):</label>
+                        <input type="number" id="duracion" name="duracion" min="1" max="20" required>
+                        <small>Ingrese un número entre 1 y 20</small>
+                    </div>
+                    <div class="form-column">
+                        <div class="precio-container">
+                            <label>Precio por hora:</label>
+                            <p id="precioPorDos" class="precio">S/. 0.00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="resumen-container">
+                    <h3>Resumen de su Alquiler</h3>
+                    <div class="resumen-item">
+                        <span>Modelo:</span>
+                        <span id="resumenModelo">-</span>
+                    </div>
+                    <div class="resumen-item">
+                        <span>Duración:</span>
+                        <span id="resumenDuracion">0 horas</span>
+                    </div>
+                    <div class="resumen-item">
+                        <span>Precio base:</span>
+                        <span id="resumenPrecioBase">S/. 0.00</span>
+                    </div>
+                    <div class="resumen-item total">
+                        <span>Total a pagar:</span>
+                        <span id="resumenTotal">S/. 0.00</span>
+                    </div>
+                </div>
+
+                <div class="metodo-pago-container">
+                    <h3>Método de Pago</h3>
+                    <div class="metodo-opciones">
+                        <div class="metodo-opcion">
+                            <input type="radio" id="efectivo" name="metodoPago" value="efectivo" checked>
+                            <label for="efectivo" class="metodo-label">
+                                <span class="metodo-icon">💵</span>
+                                <span>Efectivo en Sucursal</span>
+                            </label>
+                        </div>
+                        <div class="metodo-opcion">
+                            <input type="radio" id="transferencia" name="metodoPago" value="transferencia">
+                            <label for="transferencia" class="metodo-label">
+                                <span class="metodo-icon">💳</span>
+                                <span>Transferencia Bancaria</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="comprobanteContainer" class="comprobante-container" style="display: none;">
+                    <h4>Comprobante de Pago</h4>
+                    <p>Por favor suba una captura o foto de su comprobante de pago:</p>
+                    <input type="file" id="comprobante" name="comprobante" accept="image/*">
+                </div>
+
+                <div id="cuentaBancariaContainer" class="cuenta-container" style="display: none;">
+                    <h4>Datos para Transferencia Bancaria</h4>
+                    <p><strong>Banco:</strong> BCP - Banco de Crédito del Perú</p>
+                    <p><strong>Cuenta Nacional (Soles):</strong> 191-1234567890-10</p>
+                    <p><strong>Cuenta Interbancaria (CCI):</strong> 002-191-012345678901-10</p>
+                    <p><strong>Titular:</strong> ERXIDI E.I.R.L</p>
+                </div>
+
+                <div class="button-container">
+                    <button type="submit" class="boton-alquilar">Proceder con el Alquiler</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 ERXIDI E.I.R.L - Todos los derechos reservados</p>
+    </footer>
+
+    <div id="confirmacionModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Reserva Exitosa</h2>
+            <p>Su reserva o alquiler ha sido realizada con éxito.</p>
+            <p>Recibirá un correo de confirmación con los detalles de su reserva.</p>
+            <div class="modal-footer">
+                <button id="btnConfirmar" class="btn-confirmar">Aceptar</button>
+            </div>
+        </div>
+    </div>
+    <script src="Alquiler.js"></script>
+    <script src="SesionActiva.js"></script>
+</body>
+</html>

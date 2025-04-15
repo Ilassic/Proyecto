@@ -1,0 +1,188 @@
+/* Estilos específicos para la página de modelos de bicicletas */
+.seccion-bicicletas {
+    margin-bottom: 3rem;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 8px;
+    padding: 2rem;
+}
+
+.grid-bicicletas {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.tarjeta-bicicleta {
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #f9f9f9;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta-bicicleta:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border: 2px solid #9dc88d;
+}
+
+.imagen-bicicleta {
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imagen-bicicleta img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.5s ease;
+}
+
+.tarjeta-bicicleta:hover .imagen-bicicleta img {
+    transform: scale(1.1);
+}
+
+.info-bicicleta {
+    padding: 1.5rem;
+}
+
+.info-bicicleta h3 {
+    color: #4e944f;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.descripcion-bici {
+    color: #2f4f4f;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.detalles-bici {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.usos, .no-usos {
+    flex: 1;
+    background-color: #f0f8f0;
+    padding: 1rem;
+    border-radius: 6px;
+}
+
+.usos h4, .no-usos h4 {
+    color: #4e944f;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.usos ul, .no-usos ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.usos ul li, .no-usos ul li {
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+    line-height: 1.4;
+}
+
+.precio-bici {
+    text-align: center;
+    margin: 1.5rem 0;
+}
+
+.precio {
+    font-size: 1.2rem;
+    color: #2f4f4f;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+}
+
+.precio span {
+    color: #4e944f;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.promocion {
+    font-size: 1rem;
+    color: #e74c3c;
+    font-weight: 600;
+}
+
+.promocion span {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.boton-reservar {
+    display: block;
+    text-align: center;
+    background-color: #4e944f;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.boton-reservar:hover {
+    background-color: #3e7e3f;
+    transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .grid-bicicletas {
+        grid-template-columns: 1fr;
+    }
+    
+    .detalles-bici {
+        flex-direction: column;
+    }
+    
+    .usos, .no-usos {
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .seccion-bicicletas {
+        padding: 1rem;
+    }
+    
+    .info-bicicleta h3 {
+        font-size: 1.3rem;
+    }
+    
+    .descripcion-bici {
+        font-size: 0.9rem;
+    }
+    
+    .precio span {
+        font-size: 1.3rem;
+    }
+    
+    .promocion {
+        font-size: 0.9rem;
+    }
+    
+    .boton-reservar {
+        padding: 0.7rem 1.2rem;
+        font-size: 1rem;
+    }
+}

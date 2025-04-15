@@ -1,0 +1,200 @@
+/* Estilos generales para la pantalla de historial */
+.historial-section {
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo ligeramente transparente */
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.historial-section h2 {
+    color: #618cce; /* Azul del tema */
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #cce3cd; /* Verde claro del tema */
+    padding-bottom: 0.5rem;
+}
+
+.historial-section h3 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #4e944f; /* Verde oscuro del tema */
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    margin-top: 1.5rem; 
+}
+
+/* Estilos para los filtros */
+.filtros-historial {
+    background-color: #f0f8f0; 
+    padding: 1.5rem;
+    border-radius: 6px;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    border: 1px solid #cce3cd;
+}
+
+.filtros-historial h3 {
+    width: 100%; 
+    margin-bottom: 1rem;
+    margin-top: 0; 
+    text-align: center;
+    color: #618cce;
+}
+
+.filtro-grupo {
+    flex: 1; /* Ocupa espacio disponible */
+    min-width: 200px; /* Ancho mínimo */
+    display: flex;
+    flex-direction: column;
+}
+
+.filtro-grupo label {
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+    color: #2f4f4f; /* Gris oscuro */
+    font-size: 1rem;
+}
+
+.filtro-grupo input {
+    padding: 0.7rem;
+    border: 1px solid #cce3cd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.boton-buscar, .boton-secundario {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.3rem;
+    font-weight: 650;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    align-self: flex-end; /* Alinear botones al final del contenedor flex */
+    margin-top: 1.3rem; /* Empujar un poco hacia abajo */
+}
+
+.boton-buscar {
+    background-color: #4e944f; /* Verde oscuro */
+    color: white;
+}
+
+.boton-buscar:hover {
+    background-color: #3e7e3f; /* Verde más oscuro */
+    transform: translateY(-2px);
+}
+
+.boton-secundario {
+    background-color: #6c757d; /* Gris */
+    color: white;
+}
+
+.boton-secundario:hover {
+    background-color: #5a6268; /* Gris más oscuro */
+    transform: translateY(-2px);
+}
+
+/* Estilos para la información del usuario */
+.info-usuario-container {
+    background-color: #eef4ff; /* Azul muy claro */
+    padding: 1.5rem;
+    border-radius: 6px;
+    margin-bottom: 2rem;
+    border: 1px solid #cce3cd;
+}
+
+.info-usuario-container p {
+    font-size: 1.1rem;
+    margin-bottom: 0.6rem;
+    color: #2f4f4f;
+}
+
+.info-usuario-container strong {
+    color: #618cce; /* Azul */
+}
+
+/* Estilos para la tabla */
+.tabla-historial-container {
+    overflow-x: auto; /* Permite scroll horizontal en pantallas pequeñas si la tabla es muy ancha */
+}
+
+#tabla-historial {
+    width: 100%;
+    border-collapse: collapse; /* Une los bordes de las celdas */
+    margin-top: 1rem;
+    font-size: 1rem;
+}
+
+#tabla-historial thead {
+    background-color: #618cce; /* Azul */
+    color: white;
+}
+
+#tabla-historial th, #tabla-historial td {
+    padding: 0.8rem 1rem;
+    text-align: left;
+    border: 1px solid #cce3cd; /* Borde verde claro */
+}
+
+#tabla-historial th {
+    font-weight: 700;
+}
+
+#tabla-historial tbody tr:nth-child(even) {
+    background-color: #f8f9fa; /* Gris muy claro para filas pares */
+}
+
+#tabla-historial tbody tr:hover {
+    background-color: #e9ecef; /* Gris más oscuro al pasar el ratón */
+}
+
+/* Estilos para mensajes */
+.mensaje-info {
+    background-color: #f0f8f0; 
+    border: 1px solid #4e944f; 
+    color: #2f4f4f;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.mensaje-info a {
+    color: #618cce;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.mensaje-info a:hover {
+    text-decoration: underline;
+}
+
+#mensaje-descuento {
+    background-color: #dac50b; 
+    border-color: #ffeeba;
+    color: #856404; 
+}
+
+@media (max-width: 768px) {
+    .filtros-historial {
+        flex-direction: column; 
+        align-items: stretch;
+    }
+
+    .boton-buscar, .boton-secundario {
+        width: 100%; 
+        margin-top: 1rem;
+    }
+
+    #tabla-historial th, #tabla-historial td {
+        font-size: 1rem; /* Texto más pequeño en tablas */
+        padding: 0.6rem;
+    }
+}

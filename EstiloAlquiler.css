@@ -1,0 +1,381 @@
+/* Estilos específicos para la página de reserva */
+.formulario-container {
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.formulario-container h2 {
+    color: #618cce;
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.formulario-container .descripcion {
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 640;
+    margin-bottom: 2rem;
+    color: #2c2c2c;
+}
+
+.formulario-reserva {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.form-group {
+    font-size: 1.6rem;
+    font-weight: 600;
+    display: flex;
+    margin-bottom: 1.5rem;
+    gap: 1.5rem;
+}
+
+.form-column {
+    font-weight: 600;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-column.full-width {
+    flex: 1 0 100%;
+}
+
+.form-column label {
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    color: #618cce;
+    font-size: 1.4rem;
+}
+
+.form-column input,
+.form-column select {
+    padding: 0.8rem;
+    border: 2px solid #cce3cd;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-column input:focus,
+.form-column select:focus {
+    border-color: #4e944f;
+    outline: none;
+}
+
+.form-column small {
+    font-weight: 640;
+    font-size: 1rem;
+    color: #2c2c2c;
+    margin-top: 0.3rem;
+}
+
+.form-column select {
+    cursor: pointer;
+}
+
+.form-column input[type="date"],
+.form-column input[type="time"] {
+    cursor: pointer;
+}
+
+.bici-preview {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.bici-preview img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    margin-right: 1.5rem;
+}
+
+.modelo-seleccionado {
+    font-size: 1.6rem;
+    font-weight: 640;
+    color: #2c2c2c;
+}
+
+.precio-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background-color: #f0f8f0;
+    border-radius: 6px;
+    padding: 1rem;
+}
+
+.precio-container label {
+    margin-bottom: 0.5rem;
+}
+
+.precio {
+    font-size: 1.5rem;
+    font-weight: 640;
+    color: #2c2c2c;
+}
+
+.resumen-container {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f8f0;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.resumen-container h3 {
+    color: #618cce;
+    font-size: 1.7rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.resumen-item {
+    font-weight: 640;
+    color: #2c2c2c;
+    font-size: 1.4rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.7rem 0;
+    border-bottom: 1px solid #cce3cd;
+}
+
+.resumen-item span:first-child {
+    font-weight: 640;
+    color: #2c2c2c;
+}
+
+.resumen-item.total {
+    border-bottom: none;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 2px solid #cce3cd;
+}
+
+.resumen-item.total span {
+    font-weight: 640;
+    font-size: 1.4rem;
+    color: #2c2c2c;
+}
+
+.metodo-pago-container {
+    font-weight: 650;
+    margin-bottom: 2rem;
+}
+
+.metodo-pago-container h3 {
+    color: #618cce;
+    font-size: 1.7rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.metodo-opciones {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.metodo-opcion {
+    flex: 1;
+}
+
+.metodo-label {
+    color: #2c2c2c;
+    font-size: 1.4rem;
+    font-weight: 650;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    border: 2px solid #cce3cd;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.metodo-opcion input {
+    display: none;
+}
+
+.metodo-opcion input:checked + .metodo-label {
+    border-color: #4e944f;
+    background-color: #f0f8f0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.metodo-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.yape-container, .comprobante-container {
+    background-color: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.qr-container {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+.qr-container img {
+    border: 2px solid #4e944f;
+    border-radius: 8px;
+    padding: 0.5rem;
+    background-color: white;
+}
+
+.comprobante-container h4, .yape-container h4 {
+    color: #618cce;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.comprobante-container p, .yape-container p {
+    color: #2c2c2c;
+    font-size: 1.3rem;
+    font-weight: 640;
+    margin-bottom: 1rem;
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.boton-alquilar {
+    background-color: #4e944f;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.boton-alquilar:hover {
+    background-color: #3e7e3f;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+}
+
+.boton-alquilar:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Modal de confirmación */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+    background-color: #f9f9f9;
+    margin: 15% auto;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    position: relative;
+    animation: modalFadeIn 0.4s;
+}
+
+@keyframes modalFadeIn {
+    from {opacity: 0; transform: translateY(-50px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #4e944f;
+}
+
+.modal-content h2 {
+    color: #2c2c2c;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.modal-content p {
+    font-size: 1.4rem;
+    font-weight: 650;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.modal-footer {
+    font-weight: 650;
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.btn-confirmar {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #618cce;
+    font-size: 2rem;
+    font-weight: 640;
+    color: white;
+    border: none;
+    border-radius: 50px;
+}
+.cuenta-container {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #2c2c2c;
+    background-color: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.cuenta-container h4 {
+    color: #618cce;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.cuenta-container p {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}

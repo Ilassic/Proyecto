@@ -1,0 +1,375 @@
+/* Estilos de la pantalla Login y Registro*/
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+    min-height: 100vh;
+    margin: 0;
+}
+header h1 {
+    margin: 0;
+    font-size: 60px; 
+    letter-spacing: 1px;
+    font-weight: 900;
+}
+
+h2, h3 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+    color: #2f4f4f;
+    font-size: 2.4rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.form-container {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    transition: all 0.3s ease;
+}
+
+.form-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.tabs {
+    display: flex;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #cce3cd;
+}
+
+.tab-btn {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: none;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #2f4f4f;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.tab-btn:after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: #618cce;
+    transition: width 0.3s ease;
+}
+
+.tab-btn.active {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.6rem;
+    color: #618cce;
+}
+
+.tab-btn.active:after {
+    width: 100%;
+}
+
+.tab-btn:hover {
+    color: #618cce;
+}
+
+.form-section {
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+
+.form-section.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.form-description {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 645;
+    margin-bottom: 2rem;
+    color: #1b1b1b;
+    font-size: 1.1rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #2f4f4f;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.form-group input {
+    width: 95%;
+    padding: 0.6rem 0.8rem;
+    border: 1px solid #cce3cd;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: border-color 0.3s ease;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input:focus {
+    border-color: #618cce;
+    outline: none;
+}
+
+.form-group small {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 630;
+    display: block;
+    color: #1b1b1b;
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+}
+
+.password-toggle {
+    display: flex;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+
+.password-toggle input {
+    width: auto;
+    margin-right: 0.5rem;
+}
+
+.password-toggle label {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.form-options {
+    font-size: 1.5rem;
+    font-weight: 650;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+}
+
+.remember-me input {
+    margin-right: 0.5rem;
+}
+
+.remember-me label {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.1rem;
+}
+
+.forgot-password {
+    color: #618cce;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 640;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: color 0.3s ease;
+}
+
+.forgot-password:hover {
+    color: #4e944f;
+    text-decoration: underline;
+}
+
+.button-container {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.boton-submit {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #618cce;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    width: 100%;
+}
+
+.boton-submit:hover {
+    background-color: #4e944f;
+    transform: translateY(-2px);
+}
+
+.terms {
+    margin-top: 1rem;
+}
+
+.terms a {
+    color: #618cce;
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.terms a:hover {
+    text-decoration: underline;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: flex-start;
+}
+
+.checkbox-container input {
+    width: auto;
+    margin-right: 0.5rem;
+    margin-top: 0.25rem;
+}
+
+.checkbox-container label {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+}
+
+.split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    font-weight: 640;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    background-color: #fff;
+    color: #1b1b1b;
+    margin: 15% auto;
+    padding: 2rem;
+    font-weight: 630;
+    border-radius: 12px;
+    max-width: 500px;
+    position: relative;
+    animation: modalFadeIn 0.5s;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.close, .close-recovery {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #2f4f4f;
+    cursor: pointer;
+}
+
+.modal-footer {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+
+.btn-confirmar {
+    background-color: #618cce;
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-confirmar:hover {
+    background-color: #4e944f;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+    .form-container {
+        padding: 1rem;
+        margin: 1rem;
+    }
+
+    .tab-btn {
+        padding: 0.8rem 1rem;
+        font-size: 1rem;
+    }
+
+    .split {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .form-options {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .forgot-password {
+        margin-top: 1rem;
+    }
+}
+.split .form-group input {
+    width: 100%;
+}
+
+/* Estilos adicionales para recuperación de contraseña */
+#recuperacionModal .modal-content {
+    max-width: 450px;
+}
+
+#recuperacionModal p {
+    margin-bottom: 1.5rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+}
+
+#recuperacionModal .form-group {
+    margin-bottom: 2rem;
+}
+
+#recuperacionModal .form-group input {
+    width: 95%;
+    padding: 0.8rem;
+    font-size: 1.1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
