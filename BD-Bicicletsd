@@ -1,0 +1,55 @@
+CREATE TABLE clientes (
+    dni VARCHAR(15) PRIMARY KEY,
+    nombre VARCHAR(50) NOT NULL,
+    apellidos VARCHAR(50) NOT NULL,
+    telefono VARCHAR(15) NOT NULL,
+    correo_electronico VARCHAR(100) NOT NULL UNIQUE,
+    contrasena VARCHAR(255) NOT NULL,
+    fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+CREATE TABLE bicicleta (
+    codigo_bicicleta VARCHAR(20) PRIMARY KEY,
+    nombre_modelo VARCHAR(100) NOT NULL,
+    categoria VARCHAR(50) NOT NULL,
+    precio DECIMAL(10,2) NOT NULL,
+    fecha_registro DATE NOT NULL,
+    disponibilidad ENUM('Disponible', 'No disponible') DEFAULT 'Disponible'
+);
+CREATE TABLE metodo_pago (
+    id_metodo_pago INT AUTO_INCREMENT PRIMARY KEY,
+    tipo_pago ENUM('efectivo', 'transferencia') NOT NULL,
+    descripcion VARCHAR(100)
+);
+CREATE TABLE alquiler (
+    id_alquiler INT AUTO_INCREMENT PRIMARY KEY,
+    dni_cliente VARCHAR(15),
+    fecha_alquiler DATE NOT NULL,
+    costo_total DECIMAL(10,2),
+    cantidad_bicicletas INT,
+    total_horas INT,
+    id_metodo_pago INT,
+    FOREIGN KEY (dni_cliente) REFERENCES clientes(dni),
+    FOREIGN KEY (id_metodo_pago) REFERENCES metodo_pago(id_metodo_pago)
+);
+CREATE TABLE detalle_alquiler (
+    id_detalle INT AUTO_INCREMENT PRIMARY KEY,
+    id_alquiler INT,
+    codigo_bicicleta VARCHAR(20),
+    horas_reservadas INT,
+    FOREIGN KEY (id_alquiler) REFERENCES alquiler(id_alquiler),
+    FOREIGN KEY (codigo_bicicleta) REFERENCES bicicleta(codigo_bicicleta)
+);
+CREATE TABLE reservas (
+    id_reserva INT AUTO_INCREMENT PRIMARY KEY,
+    dni_cliente VARCHAR(15),
+    codigo_bicicleta VARCHAR(20),
+    fecha_reserva DATE,
+    hora_reserva TIME,
+    duracion_horas INT,
+    metodo_pago ENUM('efectivo', 'transferencia') NOT NULL,
+    precio_total DECIMAL(10,2),
+    estado ENUM('Pendiente', 'Confirmada', 'Cancelada') DEFAULT 'Pendiente',
+    fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (dni_cliente) REFERENCES clientes(dni),
+    FOREIGN KEY (codigo_bicicleta) REFERENCES bicicleta(codigo_bicicleta)
+);
